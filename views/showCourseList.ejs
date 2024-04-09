@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" href = "/css/1.css" >
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
+    <div class="container-fluid">
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-mdb-toggle="collapse"
+        data-mdb-target="#navbarTogglerDemo03"
+        aria-controls="navbarTogglerDemo03"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <i class="fas fa-bars"></i>
+      </button>
+      <a class="navbar-brand" href="/adminPanel">Student Dashboard</a>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link text-danger" href ="/logout">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+    <section class="vh-100 pb-5 gradient-custom">
+        
+        <!--div class="container py-5 h-100"-->
+          <div class="row d-flex justify-content-center align-items-center h-150">
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+              <div class="card bg-dark text-white" style="border-radius: 1rem;">
+                <div class="card-body p-5 text-center">
+      
+                    
+                    <table class="table">
+                        <thead class="text-white text-center">
+                            <tr>
+                              <th scope="col">Course Code</th>
+                              <th scope="col">Course Title</th>
+                              <th scope="col">Pre-requisite</th>
+                              <th scope="col">Day-1</th>
+                              <th scope="col">Day-2</th>
+                              <th scope="col">Class Time</th>
+                              <th scope="col">Faculty</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                          <% for(let i=0; i<courseList.length; i++){ %>
+                            
+                              <tr class="table-dark">
+                                <td scope="row"><li class="list-unstyled"><%=courseList[i].course_code%></td>
+                                <td class="text-end"><%=courseList[i].course_title%></td>
+                                <td class="text-end"><%=courseList[i].prerequisite%></td>
+                                <td class="text-end"><%=courseList[i].day1%></td>
+                                <td class="text-end"><%=courseList[i].day2%></td>
+                                <td class="text-end"><%=courseList[i].time%></td>
+                                <td class="text-end"><%=courseList[i].faculty%></td>
+                              </tr>
+                            
+                          <% } %>
+                        </tbody>
+
+                      </table>
+
+                    
+                  </div>
+      
+      
+                </div>
+              </div>
+            </div>
+          <!--/div-->
+        </div>
+      </section>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
